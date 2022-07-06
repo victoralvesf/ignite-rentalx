@@ -4,10 +4,10 @@ import { ListCategoriesUseCase } from './ListCategoriesUseCase'
 class ListCategoriesController {
   constructor (private listCategoriesUseCase: ListCategoriesUseCase) {}
 
-  handle (req: Request, res: Response): Response {
+  handle (request: Request, response: Response): Response {
     const categories = this.listCategoriesUseCase.execute()
 
-    return res.json(categories)
+    return response.json(categories)
   }
 }
 

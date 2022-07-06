@@ -4,12 +4,12 @@ import { CreateSpecificationUseCase } from './CreateSpecificationUseCase'
 class CreateSpecificationController {
   constructor (private createSpecificationUseCase: CreateSpecificationUseCase) {}
 
-  handle (req: Request, res: Response): Response {
-    const { name, description } = req.body
+  handle (request: Request, response: Response): Response {
+    const { name, description } = request.body
 
     this.createSpecificationUseCase.execute({ name, description })
 
-    return res.status(201).send()
+    return response.status(201).send()
   }
 }
 

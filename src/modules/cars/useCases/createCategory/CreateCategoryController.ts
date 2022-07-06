@@ -4,12 +4,12 @@ import { CreateCategoryUseCase } from './CreateCategoryUseCase'
 class CreateCategoryController {
   constructor (private createCategoryUseCase: CreateCategoryUseCase) {}
 
-  handle (req: Request, res: Response): Response {
-    const { name, description } = req.body
+  handle (request: Request, response: Response): Response {
+    const { name, description } = request.body
 
     this.createCategoryUseCase.execute({ name, description })
 
-    return res.status(201).send()
+    return response.status(201).send()
   }
 }
 
