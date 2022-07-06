@@ -29,6 +29,9 @@
         "ts": "never",
         "js": "never"
       }
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "off"
     ]
   }
 }
